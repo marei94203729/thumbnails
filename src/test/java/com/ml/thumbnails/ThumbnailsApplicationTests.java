@@ -1,5 +1,7 @@
 package com.ml.thumbnails;
 
+import com.ml.thumbnails.service.ExcelUtil;
+import lombok.Cleanup;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -24,7 +26,8 @@ class ThumbnailsApplicationTests {
         builderb.scale(0.8);
         builderb.outputQuality(0.1f);
         builderb.toFile(new File("C:\\Users\\hjj\\Desktop\\tt\\21.jpg"));*/
-
+       @Cleanup ExcelUtil.Reader reader=new ExcelUtil.Reader();
+        reader.readWorkbookByPath("C:\\Users\\hjj\\Desktop\\直播订单.xlsx").readData();
     }
 
 }

@@ -55,13 +55,13 @@
             <artifactId>thumbnailator</artifactId>
             <version>0.4.12</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <!-- 操作Excel XLS -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>4.1.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <!-- 操作Excel XLSX 本包依赖上一个poi-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
