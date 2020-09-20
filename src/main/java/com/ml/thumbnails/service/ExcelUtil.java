@@ -344,35 +344,35 @@ public class ExcelUtil {
             for (Row row : sheet1) {
                 for (Cell cell : row) {
                     CellReference cellRef = new CellReference(row.getRowNum(), cell.getColumnIndex());
-                    log.info(cellRef.formatAsString());
-                    log.info(" - ");
+                    //log.info(cellRef.formatAsString()+" - "+formatter.formatCellValue(cell));
+                    //log.info(" - ");
                     // get the text that appears in the cell by getting the cell value and applying any data formats (Date, 0.00, 1.23e9, $1.23, etc)
-                    String text = formatter.formatCellValue(cell);
-                    log.info(text);
+                    //String text = formatter.formatCellValue(cell);
+                    //log.info(text);
                     // Alternatively, get the value and format it yourself
-                   /* switch (cell.getCellType()) {
-                        case CellType.STRING:
-                            System.out.println(cell.getRichStringCellValue().getString());
+                    switch (cell.getCellType()) {
+                        case STRING:
+                         //   log.info(cell.getRichStringCellValue().getString());
                             break;
-                        case CellType.NUMERIC:
+                        case NUMERIC:
                             if (DateUtil.isCellDateFormatted(cell)) {
-                                System.out.println(cell.getDateCellValue());
+                              //  log.info(cell.getDateCellValue().toString());
                             } else {
-                                System.out.println(cell.getNumericCellValue());
+                                //log.info(String.valueOf(cell.getNumericCellValue()));
                             }
                             break;
-                        case CellType.BOOLEAN:
-                            System.out.println(cell.getBooleanCellValue());
+                        case BOOLEAN:
+                           // log.info(String.valueOf(cell.getBooleanCellValue()));
                             break;
-                        case CellType.FORMULA:
-                            System.out.println(cell.getCellFormula());
+                        case FORMULA:
+                          //  log.info(cell.getCellFormula());
                             break;
-                        case CellType.BLANK:
-                            System.out.println();
+                        case BLANK:
+                            System.out.println(cellRef.formatAsString()+" - ");
                             break;
                         default:
                             System.out.println();
-                    }*/
+                    }
                 }
             }
             return this;
